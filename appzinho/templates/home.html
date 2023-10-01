@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>✨</title>
+  <link href="{% static 'style.css'%}" rel="stylesheet" type="text/css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Signika+Negative:wght@300&family=Source+Serif+4:opsz@8..60&display=swap" rel="stylesheet">
+  {% load static %}
+</head>
+
+<body>
+  <div class="header">
+    <h4>Maria Luiza Dutra Gonzalez de Almeida</h4>
+    <h1>Studio Ghibli</h1>
+    <br>
+  </div>  
+  <br>
+  <div class="center-image">
+    <img src="https://i.pinimg.com/originals/6d/9c/49/6d9c49c24dfc3f01420c0bbca656078e.gif">
+    <img src="https://i0.wp.com/studioghibli.com.br/wp-content/uploads/2020/06/Studio_Ghibli_logo.png?w=640&ssl=1">
+    <img src="https://i.pinimg.com/originals/6d/9c/49/6d9c49c24dfc3f01420c0bbca656078e.gif">
+  </div>
+  <br>  
+  <p>
+    O <a href="https://studioghibli.com.br/studioghibli/" target="_blank"><b>Studio Ghibli</b></a> é um estúdio japonês de cinema responsável por produzir muitas das <ins>melhores</ins> e <em>mais emocionantes</em> animações da <strong>indústria</strong>.
+  </p> 
+
+  <h3>Os seus filmes mais famosos são:</h3>
+  <div class="list">
+  <ul>
+    {% for filme in filmes%}
+    <li>{{ filme.title }}
+    <a href="movies/update/{{filme.id}}"> Atualizar </a>
+    <a href="movies/delete/{{filme.id}}"> <i>Remover</i> </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <br>
+  </div>
+  <br>
+  <a href="/movies">Adicionar novo filme na lista</a>
+  <br>
+  <h3>Top 4 filmes do Studio Ghibli (na <i>nossa</i> humilde opinião):</h3>
+  <div class="list">
+  <ol>
+    {% for filme in top_filmes%}
+    <li>{{ filme.title }} 
+      <a href="top-movies/update/{{filme.id}}"> Atualizar </a>
+      <a href="top-movies/delete/{{filme.id}}"> <i>Remover</i> </a>
+    </li>
+    {% endfor %}
+  </ol>
+  </div>
+  <br>
+  <a href="/top-movies">Adicionar novo filme no top 4</a>
+  <br>
+  <h3>Filmes que foram nomeados ou que ganharam um Oscar de melhor animação:</h3>
+  <table class="center-table">
+    <tr>
+      <th>Nome de Filme</th>
+      <th>Nomeação/Ganho</th>
+      <th>Ano</th>
+    </tr>
+    {% for filme in nomeados_filmes%}
+    <tr>
+      <td>{{ filme.title }}</td>
+      <td>{{ filme.nominated }}</td>
+      <td>{{ filme.year }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <br>
+    
+</body>
+
+</html>

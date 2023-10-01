@@ -1,0 +1,7 @@
+<h1>Tem certeza que deseja deletar o filme "{{top_filmes.title}}" do top?</h1>
+<br>
+<form method="post">
+  {% csrf_token %}
+  <input type="submit"  name="confirm" value="Sim">
+  <input type="submit"  value="Não">
+</form>

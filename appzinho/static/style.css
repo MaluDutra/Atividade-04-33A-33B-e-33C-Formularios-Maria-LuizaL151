@@ -1,0 +1,44 @@
+html {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+h4{
+  font-family: 'Signika Negative', sans-serif;
+}
+
+body{
+  font-family: 'Source Serif 4', serif;
+  margin: 0px;
+}
+
+table,td,th{
+  border: 1px solid black;
+}
+
+.header{
+  background: #229fd3;
+  margin-top: -21px;
+  color: white;
+}
+
+.center-image{
+  display: flex;
+  justify-content: space-around;
+}
+
+.center-table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list{
+  display: inline-block; 
+  text-align: left;
+}
