@@ -19,6 +19,9 @@ from appzinho import views
 
 urlpatterns = [
   path('', views.homepage, name="home"),
+  path('users', views.create_user),
+  path('users/login/', views.login_user, name="login"),
+  path('users/logout/', views.logout_user, name="logout"),
   path('top-movies', views.top_movies),
   path('top-movies/update/<id>', views.update_top_movies),
   path('top-movies/delete/<id>', views.delete_top_movies),

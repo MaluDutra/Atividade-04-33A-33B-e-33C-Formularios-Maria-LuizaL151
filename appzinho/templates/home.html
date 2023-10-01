@@ -22,6 +22,12 @@
     <br>
   </div>  
   <br>
+  {% if request.user.is_authenticated %} 
+    <b>Boas-vindas, </b>{{request.user.username}}!
+    <a href="/users/logout/"> Sair da conta?</a>
+    <br>
+  {%endif%}
+  <br>
   <div class="center-image">
     <img src="https://i.pinimg.com/originals/6d/9c/49/6d9c49c24dfc3f01420c0bbca656078e.gif">
     <img src="https://i0.wp.com/studioghibli.com.br/wp-content/uploads/2020/06/Studio_Ghibli_logo.png?w=640&ssl=1">
